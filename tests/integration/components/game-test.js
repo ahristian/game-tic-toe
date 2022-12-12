@@ -5,22 +5,16 @@ import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Component | game', function (hooks) {
   setupRenderingTest(hooks);
+  const cellsData = ['', '', '', '', '', '', '', '', ''];
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    this.set('cellsData', cellsData);
+    this.set('statusDisplay', 'This is test');
 
-    await render(hbs`<Game />`);
+    await render(
+      hbs`<Game @cellsData={{this.cellsData}} @statusDisplay={{this.statusDisplay}} />`
+    );
 
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      <Game>
-        template block text
-      </Game>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).hasText('This is test');
   });
 });

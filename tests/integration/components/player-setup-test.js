@@ -14,13 +14,5 @@ module('Integration | Component | player-setup', function (hooks) {
 
     assert.dom(this.element).hasText('');
 
-    // Template block usage:
-    await render(hbs`
-      <PlayerSetup>
-        template block text
-      </PlayerSetup>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
   });
 });
