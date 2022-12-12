@@ -1,0 +1,48 @@
+<NavBar />
+<div class='w-full relative pb-16 mt-2 flex-col flex px-3 md:px-6 body'>
+  <div class='md:mt-6 lg:mt-4 mt-4'>
+    <div class='flex flex-row'>
+      <h1 class='text-3xl w-full font-semibold my-6 text-center'>
+        Welcome to Tic Tac Toe Game!
+      </h1>
+    </div>
+    <div class='flex flex-col'>
+      <div class='flex md:flex-row flex-col gap-6 lg:h-96'>
+
+        <div class='lg:w-7/12'>
+          <div class='w-full'>
+            <StatusGame
+              @gameActive={{this.gameActive}}
+              @firstPlayer={{this.firstPlayer}}
+              @secondPlayer={{this.secondPlayer}}
+              @currentPlayer={{this.currentPlayer}}
+              @player1Name={{this.player1Name}}
+              @player2Name={{this.player2Name}}
+              @statusDisplay={{this.statusDisplay}}
+            />
+            <PlayerSetup
+              @player1Name={{this.player1Name}}
+              @player2Name={{this.player2Name}}
+              @firstPlayer={{this.firstPlayer}}
+              @secondPlayer={{this.secondPlayer}}
+              @setCurrentPlayer={{this.setCurrentPlayer}}
+              @players={{this.players}}
+              @possibleSymbols={{this.possibleSymbols}}
+              @onNamePlayer={{this.onNamePlayer}}
+              @onSetCurrentPlayer={{this.onSetCurrentPlayer}}
+            />
+          </div>
+          <RestartGame @onRestartGame={{this.onRestartGame}} />
+        </div>
+        <Game
+          @onCellClick={{this.onCellClick}}
+          @statusDisplay={{this.statusDisplay}}
+          @cellsData={{this.cellsData}}
+          @player1Name={{this.player1Name}}
+          @player2Name={{this.player2Name}}
+        />
+      </div>
+      <ListScores @users={{@model.users}} />
+    </div>
+  </div>
+</div>

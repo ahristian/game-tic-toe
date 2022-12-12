@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.highlighted-disabled-overlay {
+  @apply absolute;
+  @apply w-full;
+  @apply h-full;
+  @apply z-10;
+  @apply cursor-not-allowed;
+  background: repeating-linear-gradient(-45deg, rgba(221, 221, 221, .5), rgba(221, 221, 221, .5) 55px, rgba(238, 238, 238, .5) 55px, rgba(238, 238, 238, .5) 85px);
+}
+
+.disabled-overlay-content {
+  @apply relative;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.overlay-content-pill {
+  @apply inline-block;
+  @apply bg-gray-100;
+  border: 1px solid #bbb;
+  min-width: 50%;
+  max-width: 75%;
+}
